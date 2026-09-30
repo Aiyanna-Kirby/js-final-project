@@ -19,6 +19,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* NAV */
 
 .nav__container {
@@ -40,6 +44,7 @@ a {
   color: #363732;
   font-weight: bold;
   font-size: 16px;
+  transition: all 300ms ease;
 }
 
 .nav__btn {
@@ -50,6 +55,12 @@ a {
   color: #363732;
   font-weight: bold;
   font-size: 16px;
+  transition: all 300ms ease;
+}
+
+.nav__btn:hover {
+  background-color: #8ebdea;
+  transform: scale(1.08);
 }
 
 /* LANDING PAGE */
@@ -92,6 +103,17 @@ a {
   font-size: 30px;
   z-index: 10;
 }
+
+/* REMOVING THE AUTOMATIC X 
+Source - https://stackoverflow.com/a/57012028
+*/
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+
+
 
 /* BACKGROUND IMAGE */
 
