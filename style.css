@@ -23,6 +23,26 @@ button {
   cursor: pointer;
 }
 
+.nav__link--hover {
+  position: relative;
+}
+
+.nav__link--hover:after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  height: 3px;
+  width: 0;
+  right: 0;
+  background-color: #EEC584;
+  transition: all 300ms ease;
+}
+
+.nav__link--hover:hover:after {
+  left: 0;
+  width: 100%;
+}
+
 /* HEADER */
 
 header {
@@ -72,7 +92,6 @@ nav {
   color: #eec584;
   font-weight: bold;
   font-size: 16px;
-  transition: all 300ms ease;
 }
 
 .nav__btn {
