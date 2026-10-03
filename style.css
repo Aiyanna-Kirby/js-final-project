@@ -23,10 +23,34 @@ button {
   cursor: pointer;
 }
 
+/* HEADER */
+
+header {
+  background: url(https://images2.alphacoders.com/740/thumb-1920-740460.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom : 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  filter: blur(75px);
+  z-index: 1;
+}
+
 /* NAV */
 
-#nav{
-  background-color: rgb(44, 51, 93);
+nav {
+  position: relative;
+  z-index: 2;
 }
 
 .nav__container {
@@ -40,12 +64,12 @@ button {
 
 .nav__logo {
   height: 50px;
-  width: 200px;
+  width: 100px;
 }
 
 .nav__link {
   padding: 0 16px;
-  color: white;
+  color: #EEC584;
   font-weight: bold;
   font-size: 16px;
   transition: all 300ms ease;
@@ -69,6 +93,11 @@ button {
 
 /* LANDING PAGE */
 
+#landing {
+  position: relative;
+  z-index: 2;
+}
+
 .landing__container {
   display: flex;
   flex-direction: column;
@@ -79,7 +108,7 @@ button {
 .search-bar__title {
   padding: 24px 0;
   font-size: 48px;
-  color: #363732;
+  color: #EEC584;
 }
 
 .search__form {
@@ -117,17 +146,6 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
-
-/* BACKGROUND IMAGE */
-
-/* .background {
-  z-index: -100;
-  background-image: url(https://images2.alphacoders.com/740/thumb-1920-740459.png);
-}
-
-.background__img {
-
-} */
 
 /* SEARCH INTERACTIVES */
 
