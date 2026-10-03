@@ -37,7 +37,7 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  bottom : 0;
+  bottom: 0;
   right: 0;
   width: 100%;
   height: 100%;
@@ -69,7 +69,7 @@ nav {
 
 .nav__link {
   padding: 0 16px;
-  color: #EEC584;
+  color: #eec584;
   font-weight: bold;
   font-size: 16px;
   transition: all 300ms ease;
@@ -108,7 +108,7 @@ nav {
 .search-bar__title {
   padding: 24px 0;
   font-size: 48px;
-  color: #EEC584;
+  color: #eec584;
 }
 
 .search__form {
@@ -129,12 +129,18 @@ nav {
 .search__btn {
   position: absolute;
   right: 475px;
-  top: 286px;
+  top: 154px;
   border: none;
   background-color: transparent;
   color: #363732;
   font-size: 30px;
   z-index: 10;
+  transition: all 300ms ease;
+}
+
+.search__btn:hover {
+  color: #eec584;
+  transform: scale(1.08);
 }
 
 /* REMOVING THE AUTOMATIC X 
