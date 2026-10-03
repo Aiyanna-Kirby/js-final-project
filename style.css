@@ -178,6 +178,19 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
+/* FILTER */
+
+.search__filter--title {
+  padding-bottom: 8px;
+}
+
+#filter {
+  border: 2px solid #C8AB83;
+  color:#363732;
+  background-color: #62BEC1;
+  cursor: pointer;
+}
+
 /* SEARCH INTERACTIVES */
 
 .anime__selection--container {
