@@ -197,13 +197,42 @@ input[type="search"]::-webkit-search-results-decoration {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 36px 0;
 }
 
 /* ANIME DISPLAY */
 
 .anime__display {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.display__card {
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 16px;
+  width: calc(100%/4);
+}
+
+.anime__cover {
+  width: 125px;
+  height: 200px;
+  padding: 8px;
+}
+
+.show__details {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.show__detail {
+  padding: 4px 0;
+  color:#363732;
 }
