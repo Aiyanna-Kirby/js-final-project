@@ -19,9 +19,10 @@ async function fetchAnime() {
             }</p>
             <p class="show__detail"><b>Age Rating:</b> ${anime.attributes.ageRatingGuide}</p>
             <p class="show__detail"><b>Length:</b> ${anime.attributes.episodeCount} episodes</p>
-            <p class="show__detail"><b>Synopsis:</b> ${anime.attributes.synopsis}</p>
+            <button class="watch__btn"> Watch Now! <i class="fa-regular fa-circle-play"></i></button>
           </div>
-        </div>`,
+        </div>
+        <p class="show__detail show__synopsis"><b>Synopsis:</b> ${anime.attributes.synopsis}</p>`,
     )
     .join("");
 }
