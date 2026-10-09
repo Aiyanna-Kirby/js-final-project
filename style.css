@@ -269,6 +269,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .watch__btn:hover {
   background-color: #8ebdea;
   transform: scale(1.08);
+  cursor: not-allowed;
 }
 
 .show__synopsis {
