@@ -5,9 +5,14 @@ async function fetchAnime(filter) {
   console.log(animeData);
 
   if (filter === "LOW_TO_HIGH") {
-    console.log(filter);
-    const sortedAnimeData = animeData.data.sort((a, b) => a.attributes.episodeCount - b.attributes.episodeCount);
-    console.log(sortedAnimeData);
+    animeData.data.sort(
+      (a, b) => a.attributes.episodeCount - b.attributes.episodeCount,
+    );
+  }
+  else if (filter === "HIGH_TO_LOW") {
+    animeData.data.sort(
+      (a, b) => b.attributes.episodeCount - a.attributes.episodeCount,
+    );
   }
 
   animeElementsEl.innerHTML = animeData.data
@@ -33,9 +38,13 @@ async function fetchAnime(filter) {
     .join("");
 }
 
+function filteranimeData(event) {
+  const filter = event.target.value;
+  fetchAnime(filter);
+}
+
 fetchAnime();
 
-function filterAnime(event) {
-  if (event.target.value === "LOW_TO_HIGH") {
-    console.log("low to high");}
-}
+setTimeout(() => {
+  fetchAnime();
+}, 1000);
