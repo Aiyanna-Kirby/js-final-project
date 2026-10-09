@@ -8,10 +8,20 @@ async function fetchAnime(filter) {
     animeData.data.sort(
       (a, b) => a.attributes.episodeCount - b.attributes.episodeCount,
     );
-  }
-  else if (filter === "HIGH_TO_LOW") {
+  } else if (filter === "HIGH_TO_LOW") {
     animeData.data.sort(
       (a, b) => b.attributes.episodeCount - a.attributes.episodeCount,
+    );
+  }
+
+  if (filter === "A_TO_Z") {
+    animeData.data.sort((a, b) =>
+      a.attributes.canonicalTitle.localeCompare(b.attributes.canonicalTitle),
+    );
+  }
+  else if (filter === "Z_TO_A") {
+    animeData.data.sort((a, b) =>
+      b.attributes.canonicalTitle.localeCompare(a.attributes.canonicalTitle),
     );
   }
 
