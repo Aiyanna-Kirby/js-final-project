@@ -7,6 +7,10 @@
   font-family: "Raleway", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   padding: 40px 0;
 }
@@ -21,6 +25,14 @@ a {
 
 button {
   cursor: pointer;
+}
+
+scroll {
+  
+}
+
+footer {
+  background-color: #b9d6f2;
 }
 
 .nav__link--hover {
@@ -39,6 +51,26 @@ button {
 }
 
 .nav__link--hover:hover:after {
+  left: 0;
+  width: 100%;
+}
+
+.footer__link--hover {
+  position: relative;
+}
+
+.footer__link--hover:after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  height: 3px;
+  width: 0;
+  right: 0;
+  background-color: #363732;
+  transition: all 300ms ease;
+}
+
+.footer__link--hover:hover:after {
   left: 0;
   width: 100%;
 }
@@ -109,6 +141,7 @@ nav {
   font-weight: bold;
   font-size: 16px;
   transition: all 300ms ease;
+  cursor: not-allowed;
 }
 
 .nav__btn:hover {
@@ -276,4 +309,43 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 16px 0;
   display: flex;
   flex-direction: column;
+}
+
+/* FOOTER */
+
+.footer__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__row {
+  width: 100%;
+  text-align: center;
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 16px 0;
+}
+
+.footer__link {
+  color: #363732;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.contact__link {
+  cursor: not-allowed;
+}
+
+.footer__copyright {
+  padding: 16px 0 8px 0;
+  color: #363732;
+  font-weight: bold;
+  font-size: 20px;
 }
