@@ -1,7 +1,11 @@
 async function fetchAnime(filter) {
+  // animeElementEl.classList += ' anime__loading'
+
   const anime = await fetch("https://kitsu.io/api/edge/anime");
   const animeData = await anime.json();
   const animeElementsEl = document.querySelector(".anime-elements");
+
+  // animeElementEl.classList.remove('anime__loading')
 
   if (filter === "LOW_TO_HIGH") {
     animeData.data.sort(
@@ -57,3 +61,11 @@ fetchAnime();
 setTimeout(() => {
   fetchAnime();
 }, 1000);
+
+function getanimeData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(fetchAnime());
+    }, 1000);
+  });
+}

@@ -27,10 +27,6 @@ button {
   cursor: pointer;
 }
 
-scroll {
-  
-}
-
 footer {
   background-color: #b9d6f2;
 }
@@ -348,4 +344,36 @@ input[type="search"]::-webkit-search-results-decoration {
   color: #363732;
   font-weight: bold;
   font-size: 20px;
+}
+
+/* LOADING STATE */
+
+.anime__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  font-size: 72px;
+  color:#62bec1;
+}
+
+.anime__loading-icon {
+  display: none;
+}
+
+.anime__loading-icon {
+  display: block;
+}
+
+.fa-arrows-spin {
+  animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
