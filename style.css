@@ -354,7 +354,7 @@ input[type="search"]::-webkit-search-results-decoration {
   justify-content: center;
   padding: 16px 0;
   font-size: 72px;
-  color:#62bec1;
+  color: #62bec1;
 }
 
 .anime__loading-icon {
@@ -375,5 +375,36 @@ input[type="search"]::-webkit-search-results-decoration {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* Tablets and Phones */
+
+@media (max-width: 768px) {
+  .nav__container {
+    max-width: 700px;
+    display: flex;
+  }
+
+  .nav__link {
+    text-align: right;
+  }
+
+  .nav__link:nth-child(odd) {
+    display: none;
+  }
+
+  .search-bar__title {
+    text-align: center;
+  }
+
+  .search__btn {
+    position: absolute;
+    right: 90px;
+    top: 212px;
+  }
+
+  .show__synopsis {
+    text-align: center;
   }
 }

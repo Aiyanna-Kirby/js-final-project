@@ -3,6 +3,7 @@ async function fetchAnime(filter) {
   const animeData = await anime.json();
   const animeElementsEl = document.querySelector(".anime-elements");
 
+
   if (filter === "LOW_TO_HIGH") {
     animeData.data.sort(
       (a, b) => a.attributes.episodeCount - b.attributes.episodeCount,
