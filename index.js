@@ -1,3 +1,5 @@
+let searchApi = false
+
 async function fetchAnime(filter) {
   const anime = await fetch("https://kitsu.io/api/edge/anime");
   const animeData = await anime.json();
@@ -51,6 +53,17 @@ function filteranimeData(event) {
   const filter = event.target.value;
   fetchAnime(filter);
 }
+
+/* SEARCH ERROR */
+
+// function searchApi() {
+//   if (searchApi) {
+//     searchApi = false;
+//     return 
+//   }
+//   searchAPI = true;
+//   return
+// }
 
 fetchAnime();
 
