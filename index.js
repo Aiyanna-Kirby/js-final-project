@@ -1,11 +1,7 @@
 async function fetchAnime(filter) {
-  // animeElementEl.classList += ' anime__loading'
-
   const anime = await fetch("https://kitsu.io/api/edge/anime");
   const animeData = await anime.json();
   const animeElementsEl = document.querySelector(".anime-elements");
-
-  // animeElementEl.classList.remove('anime__loading')
 
   if (filter === "LOW_TO_HIGH") {
     animeData.data.sort(
@@ -21,8 +17,7 @@ async function fetchAnime(filter) {
     animeData.data.sort((a, b) =>
       a.attributes.canonicalTitle.localeCompare(b.attributes.canonicalTitle),
     );
-  }
-  else if (filter === "Z_TO_A") {
+  } else if (filter === "Z_TO_A") {
     animeData.data.sort((a, b) =>
       b.attributes.canonicalTitle.localeCompare(a.attributes.canonicalTitle),
     );
