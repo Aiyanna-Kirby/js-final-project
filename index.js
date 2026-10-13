@@ -1,10 +1,18 @@
-let searchApi = false
+let searchApi = false;
 
 async function fetchAnime(filter) {
+  function searchApi() {
+    if (searchApi) {
+      searchApi = false;
+      return document.body.classList.remove("no__results");
+    }
+    searchAPI = true;
+    return (document.body.classList += " no--results");
+  }
+
   const anime = await fetch("https://kitsu.io/api/edge/anime");
   const animeData = await anime.json();
   const animeElementsEl = document.querySelector(".anime-elements");
-
 
   if (filter === "LOW_TO_HIGH") {
     animeData.data.sort(
@@ -53,17 +61,6 @@ function filteranimeData(event) {
   const filter = event.target.value;
   fetchAnime(filter);
 }
-
-/* SEARCH ERROR */
-
-// function searchApi() {
-//   if (searchApi) {
-//     searchApi = false;
-//     return 
-//   }
-//   searchAPI = true;
-//   return
-// }
 
 fetchAnime();
 
