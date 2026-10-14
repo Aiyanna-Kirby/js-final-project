@@ -1,13 +1,13 @@
 let searchApi = false;
 
 async function fetchAnime(filter) {
-  function searchApi() {
+  function searchApi(event) {
     if (searchApi) {
       searchApi = false;
-      return document.body.classList.remove("no__results");
+      return document.getElementById.remove("no__results");
     }
     searchAPI = true;
-    return (document.body.classList += " no--results");
+    return (document.getElementById += " no--results");
   }
 
   const anime = await fetch("https://kitsu.io/api/edge/anime");

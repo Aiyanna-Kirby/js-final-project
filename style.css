@@ -241,7 +241,6 @@ input[type="search"]::-webkit-search-results-decoration {
 /* RESULTS PAGE */
 
 #no__results {
-  display: none;
   background-color: #c8ab83;
 }
 

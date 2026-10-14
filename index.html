@@ -40,7 +40,7 @@
                 placeholder="Browse Anime Here..."
                 class="search__area"
               />
-              <button class="search__btn btn" onclick="searchApi()">
+              <button class="search__btn btn" onclick="searchApi(event)">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </form>
@@ -67,7 +67,7 @@
         </div>
       </div>
     </section>
-    <section id="no__results">
+    <section id="no__results" style="display:none">
       <div class="container no__results--container">
         <div class="row no__results--row">
           <img
