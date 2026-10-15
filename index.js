@@ -1,15 +1,4 @@
-let searchApi = false;
-
 async function fetchAnime(filter) {
-  function searchApi(event) {
-    if (searchApi) {
-      searchApi = false;
-      return document.getElementById.remove("no__results");
-    }
-    searchAPI = true;
-    return (document.getElementById += " no--results");
-  }
-
   const anime = await fetch("https://kitsu.io/api/edge/anime");
   const animeData = await anime.json();
   const animeElementsEl = document.querySelector(".anime-elements");
@@ -61,8 +50,39 @@ function filteranimeData(event) {
   const filter = event.target.value;
   fetchAnime(filter);
 }
-
 fetchAnime();
+
+// function searchApi(event) {
+//   if (searchApi) {
+//     searchApi = false;
+//     return document.getElementById.remove("no__results");
+//   }
+//   searchAPI = true;
+//   return (document.getElementById += " no--results");
+// }
+
+document
+  .getElementById("search-button")
+  .addEventListener("click", function searchAPI(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const searchTerm = document.getElementById("search-area").value;
+    const animeData = `https://kitsu.io/api/edge/anime?filter[text]=${encodeURIComponent(searchTerm)}`;
+
+    console.log(animeData);
+
+    fetch(animeData)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.data); // Correctly access the data here
+      })
+      .catch((error) => console.error("Error fetching data:", error));
+  });
 
 setTimeout(() => {
   fetchAnime();
