@@ -68,12 +68,14 @@ function searchAPI(event) {
   ];
 
   if (data.includes(searchTerm)) {
-    console.log(`Found: ${searchTerm} is in the list!`);
+    console.log(
+      `Found: ${searchTerm} is in the list! Here are specific results!`,
+    );
     document.getElementById("no__results").style.display = "none";
   } else {
     console.log(`Error: ${searchTerm} not found.`);
-    document.getElementById("no__results").style.display = "block"
-    document.getElementById("anime__selection").style.display = "none"; // Show no results section
+    document.getElementById("no__results").style.display = "block";
+    document.getElementById("anime__selection").style.display = "none";
   }
 }
 
