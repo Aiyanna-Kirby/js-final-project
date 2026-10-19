@@ -50,39 +50,34 @@ function filteranimeData(event) {
   const filter = event.target.value;
   fetchAnime(filter);
 }
+
+function searchAPI(event) {
+  event.preventDefault();
+  const searchTerm = document.getElementById("search-area").value.trim();
+  const data = [
+    "Cowboy Bebop",
+    "Cowboy Bebop: Knockin' on Heaven's Door",
+    "Trigun",
+    "Witch Hunter Robin",
+    "Beet the Vandel Buster",
+    "Eyeshield 21",
+    "Honey and Clover",
+    "Hungry Heart: Wild Striker",
+    "Initial D Fourth Stage",
+    "Monster",
+  ];
+
+  if (data.includes(searchTerm)) {
+    console.log(`Found: ${searchTerm} is in the list!`);
+    document.getElementById("no__results").style.display = "none";
+  } else {
+    console.log(`Error: ${searchTerm} not found.`);
+    document.getElementById("no__results").style.display = "block"
+    document.getElementById("anime__selection").style.display = "none"; // Show no results section
+  }
+}
+
 fetchAnime();
-
-// function searchApi(event) {
-//   if (searchApi) {
-//     searchApi = false;
-//     return document.getElementById.remove("no__results");
-//   }
-//   searchAPI = true;
-//   return (document.getElementById += " no--results");
-// }
-
-document
-  .getElementById("search-button")
-  .addEventListener("click", function searchAPI(event) {
-    event.preventDefault(); // Prevent form submission
-
-    const searchTerm = document.getElementById("search-area").value;
-    const animeData = `https://kitsu.io/api/edge/anime?filter[text]=${encodeURIComponent(searchTerm)}`;
-
-    console.log(animeData);
-
-    fetch(animeData)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data.data); // Correctly access the data here
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-  });
 
 setTimeout(() => {
   fetchAnime();
