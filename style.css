@@ -74,7 +74,7 @@ footer {
 /* Modal */
 
 #open__modal {
-  display: none;
+  /* display: none; */
   position: fixed;
   z-index: 100;
   right: 50px;
@@ -82,6 +82,7 @@ footer {
   background: none;
   border: none;
   cursor: pointer;
+  transition: all 300ms ease-in;
 }
 
 .fa-ellipsis-vertical {
@@ -100,6 +101,13 @@ footer {
   height: 100%;
   overflow: auto;
   background-color: #b9d6f2;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.navigate__modal.show {
+  display: block;
+  opacity: 1;
 }
 
 .modal-content {

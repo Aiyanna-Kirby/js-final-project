@@ -1,3 +1,29 @@
+/* Modal Function */
+const modal = document.getElementById("main__modal");
+const openModalButton = document.getElementById("open__modal");
+const closeModalButton = document.querySelector(".close-button");
+
+openModalButton.addEventListener("click", () => {
+  modal.style.display = "block"; // Show the modal
+  setTimeout(() => {
+    modal.classList.add("show"); // Add the class to trigger fade-in
+  }, 10); // Small timeout to ensure display is set before applying class
+});
+
+closeModalButton.addEventListener("click", () => {
+  modal.classList.remove("show"); // Remove the class to trigger fade-out
+  setTimeout(() => {
+    modal.style.display = "none"; // Hide the modal after the animation
+  }, 500); // Match this to your CSS transition duration
+});
+
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    closeModalButton.click(); // Close modal if clicking outside
+  }
+});
+
+/* Sorting Function */
 const animeElementsEl = document.querySelector(".anime-elements");
 let animeData = [];
 
@@ -58,7 +84,9 @@ async function searchAPI(event) {
   event.preventDefault();
   const searchTerm = document.getElementById("search-area").value.trim();
 
-  const response = await fetch(`https://kitsu.io/api/edge/anime?filter[text]=${searchTerm}`)
+  const response = await fetch(
+    `https://kitsu.io/api/edge/anime?filter[text]=${searchTerm}`,
+  );
   const data = await response.json();
   animeData = data.data;
 
