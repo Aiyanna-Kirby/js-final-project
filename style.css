@@ -71,6 +71,60 @@ footer {
   width: 100%;
 }
 
+/* Modal */
+
+.navigate__modal {
+  /* display: none; */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #b9d6f2;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #62bec1;
+  margin: 15% auto;
+  padding: 24px;
+  border: 1px solid #363732;
+  width: 80%;
+  color: #363732;
+}
+
+.modal__link {
+  color: #363732;
+  transition: all 300ms ease;
+}
+
+.modal__link:hover {
+  cursor: pointer;
+  color: black;
+  transform: scale(1.08);
+}
+
+.close-button {
+  color: #363732;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  transition: all 300ms ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  transform: scale(1.07);
+}
+
 /* HEADER */
 
 header {
@@ -215,7 +269,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .search__filter--title {
   padding-bottom: 8px;
-  color:#363732
+  color: #363732;
 }
 
 #filter {
@@ -467,3 +521,5 @@ input[type="search"]::-webkit-search-results-decoration {
     text-align: center;
   }
 }
+
+/* Tiny Phones */
