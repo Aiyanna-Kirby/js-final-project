@@ -3,23 +3,27 @@ const modal = document.getElementById("main__modal");
 const openModalButton = document.getElementById("open__modal");
 const closeModalButton = document.querySelector(".close-button");
 
+function closeModal(event) {
+  modal.classList.remove("show");
+}
+
 openModalButton.addEventListener("click", () => {
-  modal.style.display = "block"; // Show the modal
+  modal.style.display = "block";
   setTimeout(() => {
-    modal.classList.add("show"); // Add the class to trigger fade-in
-  }, 10); // Small timeout to ensure display is set before applying class
+    modal.classList.add("show");
+  }, 10);
 });
 
 closeModalButton.addEventListener("click", () => {
-  modal.classList.remove("show"); // Remove the class to trigger fade-out
+  modal.classList.remove("show");
   setTimeout(() => {
-    modal.style.display = "none"; // Hide the modal after the animation
-  }, 500); // Match this to your CSS transition duration
+    modal.style.display = "none";
+  }, 500);
 });
 
 window.addEventListener("click", (event) => {
   if (event.target === modal) {
-    closeModalButton.click(); // Close modal if clicking outside
+    closeModalButton.click();
   }
 });
 
